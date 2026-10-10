@@ -1,6 +1,13 @@
 body {
     font: 100%/1.5 system-ui;
+    background: yellow;
     max-width: 100ch;
     margin-inline: max(1em, (100% - 100ch) / 2);
     padding: 1rem;
+    
+}
+
+nav ul,
+nav li {
+    display: contents;
 }
