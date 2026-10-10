@@ -1,6 +1,5 @@
 body {
     font: 100%/1.5 system-ui;
-    background: yellow;
     max-width: 100ch;
     margin-inline: max(1em, (100% - 100ch) / 2);
     padding: 1rem;
@@ -10,4 +9,23 @@ body {
 nav ul,
 nav li {
     display: contents;
+}
+
+nav {
+    display: flex;
+    margin-bottom: 1em;
+    border-bottom: 1px solid oklch(80% 3% 200);
+}
+
+nav a {
+    flex: 1;
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+    padding: 0.5em;
+}
+
+nav a.current {
+    border-bottom: 0.4em solid oklch(80% 3% 200);
+    padding-bottom: calc(0.5em - 0.4em);
 }
