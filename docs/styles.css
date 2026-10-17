@@ -132,11 +132,7 @@ h1 {
     position: absolute;
     top: 1rem;
     right: 1rem;
+    font: inherit;
     font-size: 80%;
     font-family: inherit;
 }
-
-.color-scheme select {
-    font: inherit;
-}
-
