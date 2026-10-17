@@ -11,10 +11,20 @@ nav li {
     display: contents;
 }
 
+html {
+    color-scheme: light dark;
+}
+
 nav {
     display: flex;
     margin-bottom: 1em;
     border-bottom: 1px solid oklch(80% 3% 200);
+}
+
+nav {
+    --border-color: oklch(50% 10% 200 / 40%);
+
+    border-bottom-color: var(--border-color);
 }
 
 nav a {
@@ -26,10 +36,13 @@ nav a {
 }
 
 nav a.current {
-    border-bottom: 0.4em solid oklch(80% 3% 200);
+    border-bottom: 0.4em solid var(--color-secondary);
     padding-bottom: calc(0.5em - 0.4em);
 }
 
+nav a.current {
+    border-bottom-color: var(--color-secondary);
+}
 :root {
     --color-primary: #24224b;
     --color-secondary: #6a4ea6;
@@ -42,9 +55,11 @@ nav a.current {
 }
 
 nav a:hover {
-    border-bottom: 0.4em solid var(--color-accent);
-    background-color: var(--color-tertiary);
-    padding-bottom: calc(0.5em - 0.4em);
+    background-color: color-mix(
+        in oklch,
+        var(--color-secondary),
+        canvas 65%
+    );
 }
 
 input,
@@ -112,3 +127,16 @@ h6 {
 h1 {
     font-size: 400%;
 }
+
+.color-scheme {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 80%;
+    font-family: inherit;
+}
+
+.color-scheme select {
+    font: inherit;
+}
+
