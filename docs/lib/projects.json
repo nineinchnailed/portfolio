@@ -1,8 +1,9 @@
 [
     {
-        "title": "Lorem ipsum dolor sit amet",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        "title": "Police Ranks Before and After Civilian Complaints",
+        "year": "2026",
+        "image": "images/police.png",
+        "description": "A stacked bar chart showing changes in the distribution of police ranks before and after civilian complaints."
     },
     {
         "title": "Consectetur adipiscing elit",

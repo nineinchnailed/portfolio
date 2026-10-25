@@ -93,17 +93,25 @@ export async function fetchJSON(url) {
 }
 
 
+
 export function renderProjects(project, containerElement, headingLevel = 'h2') {
     const article = document.createElement('article');
 
+    let imagePath = project.image;
+
+    if (!imagePath.startsWith('http')) {
+        imagePath = BASE_PATH + imagePath;
+    }
+
     article.innerHTML = `
         <${headingLevel}>${project.title}</${headingLevel}>
-        <img src="${project.image}" alt="${project.title}">
+        <img src="${imagePath}" alt="${project.title}">
         <p>${project.description}</p>
     `;
 
     containerElement.appendChild(article);
 }
+
 
 
 export async function fetchGitHubData(username) {
