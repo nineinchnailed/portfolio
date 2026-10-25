@@ -136,3 +136,40 @@ h1 {
     font-size: 80%;
     font-family: inherit;
 }
+
+
+
+
+
+
+
+
+#profile-stats {
+    margin-block: 1rem;
+    padding: 1rem;
+    border: 1px solid #6a4ea6;
+    border-radius: 12px;
+}
+
+#profile-stats h2 {
+    margin-top: 0;
+}
+
+#profile-stats dl {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    text-align: center;
+}
+
+#profile-stats dt {
+    grid-row: 1;
+    font-weight: bold;
+    color: #6a4ea6;
+}
+
+#profile-stats dd {
+    grid-row: 2;
+    margin: 0;
+    font-size: 1.25rem;
+}
