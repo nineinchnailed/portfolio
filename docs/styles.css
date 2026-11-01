@@ -173,3 +173,103 @@ h1 {
     margin: 0;
     font-size: 1.25rem;
 }
+
+
+
+.project-year {
+    font-variant-numeric: oldstyle-nums;
+    color: gray;
+    font-size: 0.9em;
+}
+
+#projects-pie-plot {
+  max-width: 20em;
+  margin-block: 2em;
+
+  overflow: visible;
+}
+
+.legend {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
+    gap: 1em;
+    padding: 1em;
+    margin: 1em 0;
+    list-style: none;
+
+    border: 1px solid #d6d3dc;
+    border-radius: 12px;
+    background-color: #f8f7fa;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.swatch {
+    display: inline-block;
+    width: 1em;
+    aspect-ratio: 1 / 1;
+    background-color: var(--color);
+    border-radius: 4px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+}
+
+#projects-pie-plot {
+    max-width: 300px;
+    flex-shrink: 0;
+}
+
+.legend {
+    flex: 1;
+}
+
+.searchBar {
+    display: block;
+    width: 100%;
+    max-width: none;
+    padding: 0.8em 1em;
+    margin: 1.5em 0;
+    font-size: 1rem;
+    box-sizing: border-box;
+
+    border: 1px solid #d6d3dc;
+    border-radius: 10px;
+    background-color: #f8f7fa;
+}
+
+.searchBar:focus {
+    outline: 2px solid #6a4ea6;
+    border-color: #6a4ea6;
+}
+
+#projects-pie-plot path {
+    transition: 300ms;
+    cursor: pointer;
+}
+
+#projects-pie-plot:has(path:hover) path:not(:hover) {
+    opacity: 0.5;
+}
+
+.selected {
+    --color: #b04b74 !important;
+}
+
+.selected:is(path) {
+    fill: #24224b;
+}
+
+.legend-item.selected .swatch {
+    background-color: #24224b;
+}
+.legend-item:hover {
+    opacity: 0.75;
+}
