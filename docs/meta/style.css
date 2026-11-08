@@ -1,0 +1,231 @@
+
+/* Main layout */
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+h1.Meta {
+    color: #24224b;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+h2 {
+    color: #24224b;
+    font-size: 1.5rem;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+}
+
+/* Summary statistics */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.stats dt {
+    color: #6a4ea6;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.stats dd {
+    color: #24224b;
+    font-size: 1.7rem;
+    font-weight: 700;
+    margin: 0;
+    padding: 1rem;
+    background: #f5f2fa;
+    border: 1px solid #e5dced;
+    border-radius: 12px;
+}
+
+/* Scatterplot */
+#chart {
+    width: 100%;
+    margin: 1.5rem 0 3rem;
+    padding: 1rem;
+    background: white;
+    border: 1px solid #e5e1eb;
+    border-radius: 14px;
+    box-sizing: border-box;
+}
+
+#chart svg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+#chart svg text {
+    fill: #24224b;
+    font-size: 12px;
+}
+
+#chart .domain {
+    stroke: #aaa;
+}
+
+.gridlines line {
+    stroke: #ded9e6;
+    stroke-opacity: 0.7;
+}
+
+.gridlines path {
+    display: none;
+}
+
+.dots circle {
+    transition: 200ms;
+    transform-origin: center;
+    transform-box: fill-box;
+    cursor: pointer;
+}
+
+.dots circle:hover {
+    transform: scale(1.5);
+}
+
+.dots circle:hover {
+    opacity: 1;
+    stroke: #24224b;
+    stroke-width: 1.5px;
+}
+
+/* Smaller screens */
+@media (max-width: 600px) {
+    main {
+        padding: 1rem;
+    }
+
+    h1.Meta {
+        font-size: 2rem;
+    }
+
+    #chart {
+        padding: 0.5rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.stats dt {
+    font-size: 0.9rem;
+    color: #6a4ea6;
+    font-weight: 600;
+}
+
+.stats dd {
+    margin: 0.25rem 0 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #24224b;
+}
+
+#chart {
+    width: 100%;
+    margin: 2rem 0;
+}
+
+#chart svg {
+    width: 100%;
+    height: auto;
+}
+
+.gridlines line {
+    stroke: #ddd;
+    stroke-opacity: 0.5;
+}
+
+.gridlines path {
+    display: none;
+}
+
+.dots circle {
+    opacity: 0.7;
+}
+
+
+
+
+
+
+
+/* Tooltip layout */
+dl.info {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.4rem 1rem;
+    margin: 0;
+    padding: 1rem;
+    font-size: 0.9rem;
+    transition: opacity 200ms, visibility 200ms;
+}
+
+dl.info dt {
+    color: #8b8198;
+    font-weight: 600;
+}
+
+dl.info dd {
+    margin: 0;
+    color: #24224b;
+    overflow-wrap: anywhere;
+}
+
+/* Tooltip positioning and appearance */
+.tooltip {
+    position: fixed;
+    top: 1em;
+    left: 1em;
+    z-index: 1000;
+    max-width: 300px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid #e5dced;
+    border-radius: 12px;
+    box-shadow: 0 6px 24px rgba(36, 34, 75, 0.15);
+    backdrop-filter: blur(10px);
+    pointer-events: none;
+}
+
+/* Hide tooltip when not active */
+dl.info[hidden]:not(:hover, :focus-within) {
+    opacity: 0;
+    visibility: hidden;
+}
+
+
+/* Brush selection */
+.selection {
+    fill-opacity: 0.1;
+    stroke: black;
+    stroke-opacity: 0.7;
+    stroke-dasharray: 5 3;
+}
+
+/* Highlight selected commits */
+circle.selected {
+    fill: #ff6b6b;
+}

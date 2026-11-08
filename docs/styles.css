@@ -273,3 +273,69 @@ h1 {
 .legend-item:hover {
     opacity: 0.75;
 }
+
+@media (prefers-color-scheme: dark) {
+    .legend {
+        color: #f8f7fa;
+        background-color: #24224b;
+        border-color: #6a4ea6;
+    }
+
+    .legend-item {
+        color: #f8f7fa;
+    }
+
+    .legend-item.selected {
+        color: #c698d9;
+    }
+}
+
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.stats dt {
+    font-size: 0.9rem;
+    color: #6a4ea6;
+    font-weight: 600;
+}
+
+.stats dd {
+    margin: 0.25rem 0 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #24224b;
+}
+
+#chart {
+    width: 100%;
+    margin: 2rem 0;
+}
+
+#chart svg {
+    width: 100%;
+    height: auto;
+}
+
+.gridlines line {
+    stroke: #ddd;
+    stroke-opacity: 0.5;
+}
+
+.gridlines path {
+    display: none;
+}
+
+.dots circle {
+    opacity: 0.7;
+}
+
+
+
+#language-breakdown:empty {
+    display: none;
+}
