@@ -2,6 +2,7 @@
 
 import * as d3 from 'https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm';
 
+let colors = d3.scaleOrdinal(d3.schemeTableau10);
 
 let xScale;
 let yScale;
@@ -352,9 +353,9 @@ function onTimeSliderChange() {
       timeStyle: 'short',
     });
 
-  filteredCommits = commits.filter(
-    (d) => d.datetime <= commitMaxTime
-  );
+  filteredCommits = commits.filter(d => d.datetime <= commitMaxTime);
+  updateScatterPlot(data, filteredCommits);
+  updateFileDisplay(filteredCommits);
 
    console.log('Slider changed!');
    console.log(commitProgress);
@@ -436,4 +437,42 @@ function updateScatterPlot(data, commits) {
 
       updateTooltipVisibility(false);
     });
+}
+
+function updateFileDisplay(filteredCommits) {
+  let lines = filteredCommits.flatMap((d) => d.lines);
+
+  let files = d3
+    .groups(lines, (d) => d.file)
+    .map(([name, lines]) => {
+      return { name, lines };
+    })
+    .sort((a, b) => b.lines.length - a.lines.length);
+
+  let filesContainer = d3
+    .select('#files')
+    .selectAll('div')
+    .data(files, (d) => d.name)
+    .join((enter) =>
+      enter.append('div').call((div) => {
+        div.append('dt').append('code');
+        div.append('dd');
+      }),
+    );
+
+  filesContainer
+    .select('dt > code')
+    .html((d) => `${d.name}<small>${d.lines.length} lines</small>`);
+
+  filesContainer
+    .select('dd')
+    .selectAll('div')
+    .data((d) => d.lines)
+    .join('div')
+    .attr('class', 'loc');
+
+  filesContainer.attr(
+    'style',
+    (d) => `--color: ${colors(d.lines[0]?.type)}`,
+  );
 }
