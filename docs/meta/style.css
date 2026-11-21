@@ -306,3 +306,53 @@ circle {
   background: var(--color, steelblue);
   border-radius: 50%;
 }
+
+#scrolly-1 {
+  position: relative;
+  display: flex;
+  gap: 1rem;
+
+  > * {
+    flex: 1;
+  }
+}
+
+#scatter-story {
+  position: relative;
+}
+
+#scatter-plot {
+  position: sticky;
+  top: 0;
+  left: 0;
+  bottom: auto;
+  height: 50vh;
+}
+
+.step {
+  padding-bottom: 50vh;
+}
+
+
+/* Reduce spacing between paragraphs */
+p {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+/* Reduce spacing between scroll sections */
+.step {
+  margin-bottom: 1rem;
+  padding: 0.5rem 1rem;
+}
+
+/* Reduce spacing between story sections */
+#scatter-story {
+  gap: 0.5rem;
+}
+
+/* Reduce spacing around headings */
+h1, h2, h3 {
+  margin-top: 0.75rem;
+  margin-bottom: 0.5rem;
+}
