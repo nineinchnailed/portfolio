@@ -18,6 +18,27 @@
 
         <div id="stats"></div>
 
+                
+        <div class="time-control">
+        <label for="commit-progress">
+            Show commits until:
+        </label>
+
+        <input
+            type="range"
+            id="commit-progress"
+            min="0"
+            max="100"
+            value="100"
+        />
+
+        <time id="commit-time"></time>
+        </div>
+
+
+
+        
+
         <h2>Commits by time of day</h2>
         <div id="chart"></div>
 
@@ -42,8 +63,6 @@
 
         <div id="stats"></div>
 
-        <h2>Commits by time of day</h2>
-        <div id="chart"></div>
 
         <p id="selection-count">No commits selected</p>
         <dl id="language-breakdown" class="stats"></dl>

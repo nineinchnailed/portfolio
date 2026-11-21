@@ -230,3 +230,34 @@ circle.selected {
     fill: #ff6b6b;
 }
 
+
+
+
+
+
+
+
+
+
+.time-control {
+  display: flex;
+  align-items: baseline;
+  gap: 1em;
+  margin-bottom: 1em;
+}
+
+.time-control input {
+  flex: 1;
+}
+
+.time-control time {
+  margin-left: auto;
+}
+
+circle {
+  transition: all 200ms;
+
+  @starting-style {
+    r: 0;
+  }
+}
